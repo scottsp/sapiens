@@ -1,8 +1,10 @@
-# sapiens
+
+# ERP Sapiens
 Alguns comandos para desenvolvimento em LSP da Senior Sistemas
 
 GRAVAÇÃO DE ARQUIVOS NO HD
 
+~~~
 @------ DESMONTA A DATA PARA GRAVAÇÃO DO CAMINHO DO ARQUIVO ------@
 converteMascara(3, integra, data_string, "DDMMYYYY");
 converteMascara(4, hs_number, hs_string, "hhmm");
@@ -16,11 +18,13 @@ gravarnl( arquivo, "Não houve erros de CÓDIGO DE PRODUTOS DO CLIENTE!" );
 
 @------ FECHA O ARQUIVO DE LOGS ------@
 fechar( arquivo );
+~~~
 
-============================================================================================================================
+---
 
 CRIAÇÃO DE XCURSOR
 
+~~~
 Definir Alfa xCursor;
 SQL_Criar(xCursor);
 SQL_UsarSQLSenior2(xCursor,0);  @define que o comando deverá utilizar a sintaxe nativa do banco de dados@
@@ -48,12 +52,13 @@ SQL_AbrirCursor(xCursor);
 	}
 SQL_FecharCursor(xCursor);
 SQL_Destruir(xCursor);
-
-============================================================================================================================
+~~~
+---
 
 INSTANCIANDO WEBSERVICE
 
-                                     WebService.Porta    variavel
+~~~
+                                    @WebService.Porta   variavel@
 Definir interno.com.senior.g5.co.ger.Relatorio.Executar vRelatorio;
 vRelatorio.prEntrada = "<ENumEmp="+ aNumEmp +">" +
                        "<ENumFil="+ aNumFil +">" +
@@ -82,30 +87,38 @@ vRelatorio.prEntranceIsXML = "F"; /* Para a execução do serviço de execução
 vRelatorio.prSaveFormat = "tsfPDF"; @ Indica o formato do arquivo salvo em arquivo @
 vRelatorio.Executar();
 aErro = vRelatorio.prLOG; @ retorna o erro a mensagem de erro @
+~~~
 
-============================================================================================================================
+---
 
 TRABALHANDO COM GRADE EM RELATÓRIOS MODO GRÁFICO
 
 - Adição das Linhas e Colunas
 Para adicionar as linhas e colunas em tempo de execução foi disponibilizado o método:
 
+~~~
 AdicionaDadosGrade(AlfaControlName,  Numero Linha, Numero Coluna, Alfa Texto);
+~~~
 
 - Limpeza das Linhas e Colunas
 Para limpar os dados adicionados ao controle basta chamar a função:
 
+~~~
 LimpaDadosGrade(Alfa ControlName);
+~~~
 
 - Truncar Valores de Células
 Trunca valores de células de uma grade no gerador de relatório.
 
+~~~
 TruncaDadosGrade(AlfaControlName,  Numero Linha, Numero Coluna);
+~~~
 
-============================================================================================================================
+---
 
 PULANDO LINHA EM REGRAS
 
+~~~
 Definir Alfa aLF;
 Definir Alfa aCR;
 
@@ -113,5 +126,6 @@ CaractereParaAlfa(10, aLF)
 CaractereParaAlfa(13, aCR)
 
 Texto = Texto + aCR + aLF;
+~~~
 
-============================================================================================================================
+---
