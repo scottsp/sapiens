@@ -55,7 +55,7 @@ SQL_Destruir(xCursor);
 
 INSTANCIANDO WEBSERVICE
 
-                                    WebService.Porta    variavel
+                                     WebService.Porta    variavel
 Definir interno.com.senior.g5.co.ger.Relatorio.Executar vRelatorio;
 vRelatorio.prEntrada = "<ENumEmp="+ aNumEmp +">" +
                        "<ENumFil="+ aNumFil +">" +
@@ -68,13 +68,13 @@ vRelatorio.prEntrada = "<ENumEmp="+ aNumEmp +">" +
                        "<EDatEmi="+ aDatEmi +">" +
                        "<ETipRel="+ aTipRel +">"; /* os valores de entrada devem ficar como no exemplo acima separados por <Variavel de entrada = valor ><Variavel de entrada = valor > */
 vRelatorio.prRelatorio = "FRCR200.GER"; @ nome do relatório @ 
-vRelatorio.prRemetente = "BRASPAR Receber <receber@brasparparafusos.com.br>"; 
-vRelatorio.prCc = "receber@brasparparafusos.com.br"; /* Solicitado por Michele - Financeiro 08/09/2020 - Retirei financeiro@brasparparafusos.com.br */
-vRelatorio.prCco = "marcelo@brasparparafusos.com.br;rosane@brasparparafusos.com.br";
-vRelatorio.prFileName = "RecebiveisWV.pdf"; @ nome do arquivo a ser gerado @ 
+vRelatorio.prRemetente = "Receber <receber@dominio.com.br>"; 
+vRelatorio.prCc = "email@dominio.com.br";
+vRelatorio.prCco = "email@dominio.com.br;email2@dominio.com.br";
+vRelatorio.prFileName = "Recebiveis.pdf"; @ nome do arquivo a ser gerado @ 
 vRelatorio.prExecFmt = "tefMail"; @ Define como será o tipo de saída tefMail é por e-mail, tefFile = arquivo @ 
 vRelatorio.prDest = aEmaCli; @ INSERIR AQUI O E-MAIL DO CLIENTE @
-vRelatorio.prAssunto = "Gestão de Recebíveis Ind. Mec. Braspar para WV Arambul Serv. Adm."; 
+vRelatorio.prAssunto = "Gestão de Recebíveis"; 
 vRelatorio.prAnexoBool = "T"; /* Indica se o relatório será enviado como anexo (T) ou no corpo da mensagem (F), padrão T. */ 
 vRelatorio.prMensagem = aEmaCor; /* a variavel enter foi definida como alfa e através da função RetornaAscII é utilizada para quebra de linha */ 
 @vRelatorio.prUniqueFile = "S";@ @ Se o tipo da imagem será Bitmap. Essa informação é opcional. @
