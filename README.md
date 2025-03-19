@@ -4,8 +4,8 @@ Alguns comandos para desenvolvimento em LSP da Senior Sistemas
 GRAVAÇÃO DE ARQUIVOS NO HD
 
 @------ DESMONTA A DATA PARA GRAVAÇÃO DO CAMINHO DO ARQUIVO ------@
-converteMascara( 3, integra, data_string, "DDMMYYYY" );
-converteMascara( 4, hs_number, hs_string, "hhmm"     );
+converteMascara(3, integra, data_string, "DDMMYYYY");
+converteMascara(4, hs_number, hs_string, "hhmm");
 caminho =  "C:\\EDI\\ImpEDI_" + data_string + "_" + hs_string + "Hs.log";
 
 @------ ABRE O ARQUIVO DE LOGS PARA TRATAMENTOS DE ERROS ------@
@@ -40,14 +40,12 @@ SQL_DefinirInteiro(xCursor, "xCodFil", nCodFil);
 SQL_DefinirAlfa(xCursor, "xCodPor", aCodPor);
 @SQL_DefinirData(xCursor, "xDatEmi", dDatEmi);@
 SQL_AbrirCursor(xCursor);
-  Enquanto (SQL_EOF(xCursor) = 0) {
-    SQL_RetornarInteiro(xCursor,"NumArb", nNumArb);
-    SQL_RetornarInteiro(xCursor,"CodCli", nCodCli);
-    SQL_RetornarAlfa(xCursor,"CodCrt", aCodCrt);
-	
-	
-    SQL_Proximo(xCursor);
-  }
+	Enquanto (SQL_EOF(xCursor) = 0) {
+		SQL_RetornarInteiro(xCursor,"NumArb", nNumArb);
+		SQL_RetornarInteiro(xCursor,"CodCli", nCodCli);
+		SQL_RetornarAlfa(xCursor,"CodCrt", aCodCrt);
+		SQL_Proximo(xCursor);
+	}
 SQL_FecharCursor(xCursor);
 SQL_Destruir(xCursor);
 
